@@ -1,0 +1,1095 @@
+{
+  "version": "0.2.0",
+  "refreshSeconds": 30,
+  "heroRespawnSeconds": 20,
+  "units": [
+    {
+      "id": "H01",
+      "race": "Human",
+      "name": "민병대",
+      "cost": 5,
+      "buildingHp": 276,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "role": "front",
+      "profile": "stats",
+      "tiers": [
+        {
+          "name": "몽둥이 민병",
+          "hp": 120,
+          "damage": 20,
+          "attackInterval": 1.2,
+          "range": 0.55,
+          "speed": 0.85,
+          "spawnInterval": 8,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "나무검 병사",
+          "hp": 192,
+          "damage": 32,
+          "attackInterval": 1.2,
+          "range": 0.55,
+          "speed": 0.85,
+          "spawnInterval": 8,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "철검 병사",
+          "hp": 307,
+          "damage": 51,
+          "attackInterval": 1.2,
+          "range": 0.55,
+          "speed": 0.85,
+          "spawnInterval": 8,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "창병",
+          "hp": 461,
+          "damage": 77,
+          "attackInterval": 1.2,
+          "range": 1.15,
+          "speed": 0.85,
+          "spawnInterval": 7.6,
+          "effect": "antiCavalry",
+          "effectPower": 1.25,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "대검병",
+          "hp": 461,
+          "damage": 69,
+          "attackInterval": 1.2,
+          "range": 0.55,
+          "speed": 0.85,
+          "spawnInterval": 7.6,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.8,
+          "targetLimit": 3
+        }
+      ]
+    },
+    {
+      "id": "H02",
+      "race": "Human",
+      "name": "사격 훈련소",
+      "cost": 7,
+      "buildingHp": 170,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "role": "ranged",
+      "profile": "mixed",
+      "tiers": [
+        {
+          "name": "돌팔매병",
+          "hp": 74,
+          "damage": 22,
+          "attackInterval": 1.35,
+          "range": 2.8,
+          "speed": 0.78,
+          "spawnInterval": 9.5,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "궁수",
+          "hp": 104,
+          "damage": 31,
+          "attackInterval": 1.35,
+          "range": 2.8,
+          "speed": 0.78,
+          "spawnInterval": 8.17,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "석궁병",
+          "hp": 152,
+          "damage": 45,
+          "attackInterval": 1.35,
+          "range": 2.8,
+          "speed": 0.78,
+          "spawnInterval": 6.935,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "머스킷총병",
+          "hp": 229,
+          "damage": 68,
+          "attackInterval": 0.9,
+          "range": 2.8,
+          "speed": 0.78,
+          "spawnInterval": 6.175,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "저격총병",
+          "hp": 229,
+          "damage": 123,
+          "attackInterval": 2,
+          "range": 4.2,
+          "speed": 0.78,
+          "spawnInterval": 6.175,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "H03",
+      "race": "Human",
+      "name": "기마대",
+      "cost": 10,
+      "buildingHp": 437,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "role": "cavalry",
+      "profile": "stats",
+      "tiers": [
+        {
+          "name": "몽둥이 기수",
+          "hp": 190,
+          "damage": 27,
+          "attackInterval": 1.25,
+          "range": 0.55,
+          "speed": 1.3,
+          "spawnInterval": 12,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "나무검 기수",
+          "hp": 304,
+          "damage": 43,
+          "attackInterval": 1.25,
+          "range": 0.55,
+          "speed": 1.3,
+          "spawnInterval": 12,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "철검 기병",
+          "hp": 486,
+          "damage": 69,
+          "attackInterval": 1.25,
+          "range": 0.55,
+          "speed": 1.3,
+          "spawnInterval": 12,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "돌격 창기병",
+          "hp": 730,
+          "damage": 104,
+          "attackInterval": 1.25,
+          "range": 0.55,
+          "speed": 1.3,
+          "spawnInterval": 11.4,
+          "effect": "charge",
+          "effectPower": 1.75,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "근위 기병",
+          "hp": 912,
+          "damage": 104,
+          "attackInterval": 1.25,
+          "range": 0.55,
+          "speed": 1.1,
+          "spawnInterval": 11.4,
+          "effect": "guard",
+          "effectPower": 0.1,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "H04",
+      "race": "Human",
+      "name": "마법 연구소",
+      "cost": 14,
+      "buildingHp": 198,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "role": "mage",
+      "profile": "stats",
+      "tiers": [
+        {
+          "name": "견습 마법사",
+          "hp": 86,
+          "damage": 26,
+          "attackInterval": 1.8,
+          "range": 2.6,
+          "speed": 0.72,
+          "spawnInterval": 14,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.7,
+          "targetLimit": 3
+        },
+        {
+          "name": "수정 마법사",
+          "hp": 138,
+          "damage": 42,
+          "attackInterval": 1.8,
+          "range": 2.6,
+          "speed": 0.72,
+          "spawnInterval": 14,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.7,
+          "targetLimit": 3
+        },
+        {
+          "name": "룬 마법사",
+          "hp": 220,
+          "damage": 67,
+          "attackInterval": 1.8,
+          "range": 2.6,
+          "speed": 0.72,
+          "spawnInterval": 14,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.7,
+          "targetLimit": 3
+        },
+        {
+          "name": "화염 대마법사",
+          "hp": 330,
+          "damage": 100,
+          "attackInterval": 1.8,
+          "range": 2.6,
+          "speed": 0.72,
+          "spawnInterval": 13.3,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 1,
+          "targetLimit": 4
+        },
+        {
+          "name": "수호 대마법사",
+          "hp": 330,
+          "damage": 85,
+          "attackInterval": 1.8,
+          "range": 2.6,
+          "speed": 0.72,
+          "spawnInterval": 13.3,
+          "effect": "shield",
+          "effectPower": 0.12,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "H05",
+      "race": "Human",
+      "name": "장창 훈련소",
+      "cost": 6,
+      "buildingHp": 218,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "role": "front",
+      "profile": "mixed",
+      "tiers": [
+        {
+          "name": "견습 창병",
+          "hp": 95,
+          "damage": 16,
+          "attackInterval": 1.4,
+          "range": 1.1,
+          "speed": 0.8,
+          "spawnInterval": 8.5,
+          "effect": "antiCavalry",
+          "effectPower": 1.25,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "수비 창병",
+          "hp": 133,
+          "damage": 22,
+          "attackInterval": 1.4,
+          "range": 1.1,
+          "speed": 0.8,
+          "spawnInterval": 7.31,
+          "effect": "antiCavalry",
+          "effectPower": 1.25,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "장창병",
+          "hp": 195,
+          "damage": 33,
+          "attackInterval": 1.4,
+          "range": 1.1,
+          "speed": 0.8,
+          "spawnInterval": 6.205,
+          "effect": "antiCavalry",
+          "effectPower": 1.25,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "기마 저지병",
+          "hp": 294,
+          "damage": 50,
+          "attackInterval": 1.4,
+          "range": 1.1,
+          "speed": 0.8,
+          "spawnInterval": 5.525,
+          "effect": "antiCavalry",
+          "effectPower": 1.8,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "정예 장창병",
+          "hp": 294,
+          "damage": 63,
+          "attackInterval": 1.4,
+          "range": 1.5,
+          "speed": 0.8,
+          "spawnInterval": 5.525,
+          "effect": "antiCavalry",
+          "effectPower": 1.25,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "H06",
+      "race": "Human",
+      "name": "연발 쇠뇌소",
+      "cost": 11,
+      "buildingHp": 161,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "role": "ranged",
+      "profile": "production",
+      "tiers": [
+        {
+          "name": "견습 쇠뇌수",
+          "hp": 70,
+          "damage": 18,
+          "attackInterval": 1.6,
+          "range": 3,
+          "speed": 0.75,
+          "spawnInterval": 13,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "쇠뇌수",
+          "hp": 80,
+          "damage": 21,
+          "attackInterval": 1.6,
+          "range": 3,
+          "speed": 0.75,
+          "spawnInterval": 8.84,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "연발 쇠뇌수",
+          "hp": 94,
+          "damage": 24,
+          "attackInterval": 1.6,
+          "range": 3,
+          "speed": 0.75,
+          "spawnInterval": 5.98,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "속사 쇠뇌수",
+          "hp": 126,
+          "damage": 32,
+          "attackInterval": 1.1,
+          "range": 3,
+          "speed": 0.75,
+          "spawnInterval": 4.55,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "중형 쇠뇌수",
+          "hp": 126,
+          "damage": 52,
+          "attackInterval": 1.6,
+          "range": 3.6,
+          "speed": 0.75,
+          "spawnInterval": 6.5,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "O01",
+      "race": "Orc",
+      "name": "싸움터",
+      "cost": 7,
+      "buildingHp": 483,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "role": "front",
+      "profile": "orc",
+      "tiers": [
+        {
+          "name": "주먹 싸움꾼",
+          "hp": 210,
+          "damage": 38,
+          "attackInterval": 1.5,
+          "range": 0.55,
+          "speed": 0.75,
+          "spawnInterval": 13.5,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "돌도끼 전사",
+          "hp": 378,
+          "damage": 68,
+          "attackInterval": 1.5,
+          "range": 0.55,
+          "speed": 0.75,
+          "spawnInterval": 13.5,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "철도끼 전사",
+          "hp": 682,
+          "damage": 124,
+          "attackInterval": 1.5,
+          "range": 0.55,
+          "speed": 0.75,
+          "spawnInterval": 12.825,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "광전사",
+          "hp": 1008,
+          "damage": 182,
+          "attackInterval": 1.5,
+          "range": 0.55,
+          "speed": 0.75,
+          "spawnInterval": 12.42,
+          "effect": "berserk",
+          "effectPower": 0.75,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "방패 파괴자",
+          "hp": 1008,
+          "damage": 182,
+          "attackInterval": 1.5,
+          "range": 0.55,
+          "speed": 0.75,
+          "spawnInterval": 12.42,
+          "effect": "shieldbreak",
+          "effectPower": 2,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "O02",
+      "race": "Orc",
+      "name": "투척 훈련장",
+      "cost": 10,
+      "buildingHp": 304,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "role": "ranged",
+      "profile": "orc",
+      "tiers": [
+        {
+          "name": "뼈창 투척수",
+          "hp": 132,
+          "damage": 48,
+          "attackInterval": 1.8,
+          "range": 2.2,
+          "speed": 0.78,
+          "spawnInterval": 16,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "돌창 사냥꾼",
+          "hp": 238,
+          "damage": 86,
+          "attackInterval": 1.8,
+          "range": 2.2,
+          "speed": 0.78,
+          "spawnInterval": 16,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "쇠창 사냥꾼",
+          "hp": 429,
+          "damage": 156,
+          "attackInterval": 1.8,
+          "range": 2.2,
+          "speed": 0.78,
+          "spawnInterval": 15.2,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "도끼 폭풍수",
+          "hp": 634,
+          "damage": 230,
+          "attackInterval": 1.8,
+          "range": 2.2,
+          "speed": 0.78,
+          "spawnInterval": 14.72,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.6,
+          "targetLimit": 2
+        },
+        {
+          "name": "독창 사냥꾼",
+          "hp": 634,
+          "damage": 230,
+          "attackInterval": 1.8,
+          "range": 2.6,
+          "speed": 0.78,
+          "spawnInterval": 14.72,
+          "effect": "poison",
+          "effectPower": 0.08,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "O03",
+      "race": "Orc",
+      "name": "주술 제단",
+      "cost": 14,
+      "buildingHp": 368,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "role": "support",
+      "profile": "orc",
+      "tiers": [
+        {
+          "name": "재 주술사",
+          "hp": 160,
+          "damage": 28,
+          "attackInterval": 1.7,
+          "range": 2.3,
+          "speed": 0.72,
+          "spawnInterval": 19,
+          "effect": "heal",
+          "effectPower": 0.08,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "뼈 주술사",
+          "hp": 288,
+          "damage": 50,
+          "attackInterval": 1.7,
+          "range": 2.3,
+          "speed": 0.72,
+          "spawnInterval": 19,
+          "effect": "heal",
+          "effectPower": 0.08,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "피의 주술사",
+          "hp": 520,
+          "damage": 91,
+          "attackInterval": 1.7,
+          "range": 2.3,
+          "speed": 0.72,
+          "spawnInterval": 18.05,
+          "effect": "heal",
+          "effectPower": 0.08,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "전쟁 주술사",
+          "hp": 768,
+          "damage": 134,
+          "attackInterval": 1.7,
+          "range": 2.3,
+          "speed": 0.72,
+          "spawnInterval": 17.48,
+          "effect": "haste",
+          "effectPower": 0.15,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "생명 주술사",
+          "hp": 768,
+          "damage": 134,
+          "attackInterval": 1.7,
+          "range": 2.3,
+          "speed": 0.72,
+          "spawnInterval": 17.48,
+          "effect": "heal",
+          "effectPower": 0.12,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "O04",
+      "race": "Orc",
+      "name": "파쇄 공방",
+      "cost": 19,
+      "buildingHp": 897,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "role": "siege",
+      "profile": "orc",
+      "tiers": [
+        {
+          "name": "망치 파쇄수",
+          "hp": 390,
+          "damage": 80,
+          "attackInterval": 2.6,
+          "range": 0.65,
+          "speed": 0.6,
+          "spawnInterval": 25,
+          "effect": "siege",
+          "effectPower": 1.4,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "철퇴 파쇄수",
+          "hp": 702,
+          "damage": 144,
+          "attackInterval": 2.6,
+          "range": 0.65,
+          "speed": 0.6,
+          "spawnInterval": 25,
+          "effect": "siege",
+          "effectPower": 1.4,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "중장 파쇄수",
+          "hp": 1268,
+          "damage": 260,
+          "attackInterval": 2.6,
+          "range": 0.65,
+          "speed": 0.6,
+          "spawnInterval": 23.75,
+          "effect": "siege",
+          "effectPower": 1.4,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "성문 파괴자",
+          "hp": 1872,
+          "damage": 384,
+          "attackInterval": 2.6,
+          "range": 0.65,
+          "speed": 0.6,
+          "spawnInterval": 23.0,
+          "effect": "siege",
+          "effectPower": 2,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "지진 파쇄수",
+          "hp": 1872,
+          "damage": 326,
+          "attackInterval": 2.6,
+          "range": 0.65,
+          "speed": 0.6,
+          "spawnInterval": 23.0,
+          "effect": "splash",
+          "effectPower": 1.4,
+          "splash": 0.9,
+          "targetLimit": 3
+        }
+      ]
+    },
+    {
+      "id": "O05",
+      "race": "Orc",
+      "name": "늑대 우리",
+      "cost": 8,
+      "buildingHp": 368,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "role": "cavalry",
+      "profile": "mixed",
+      "tiers": [
+        {
+          "name": "어린 전투늑대",
+          "hp": 160,
+          "damage": 24,
+          "attackInterval": 1.1,
+          "range": 0.55,
+          "speed": 1.4,
+          "spawnInterval": 15,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "전투늑대",
+          "hp": 224,
+          "damage": 34,
+          "attackInterval": 1.1,
+          "range": 0.55,
+          "speed": 1.4,
+          "spawnInterval": 12.9,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "장갑 전투늑대",
+          "hp": 328,
+          "damage": 49,
+          "attackInterval": 1.1,
+          "range": 0.55,
+          "speed": 1.4,
+          "spawnInterval": 10.95,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "추격 늑대",
+          "hp": 496,
+          "damage": 74,
+          "attackInterval": 1.1,
+          "range": 0.55,
+          "speed": 1.8,
+          "spawnInterval": 9.75,
+          "effect": "",
+          "effectPower": 0,
+          "splash": 0,
+          "targetLimit": 1
+        },
+        {
+          "name": "우두머리 늑대",
+          "hp": 680,
+          "damage": 74,
+          "attackInterval": 1.1,
+          "range": 0.55,
+          "speed": 1.4,
+          "spawnInterval": 9.75,
+          "effect": "guard",
+          "effectPower": 0.1,
+          "splash": 0,
+          "targetLimit": 1
+        }
+      ]
+    },
+    {
+      "id": "O06",
+      "race": "Orc",
+      "name": "바위 투척장",
+      "cost": 11,
+      "buildingHp": 391,
+      "shape": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "role": "ranged",
+      "profile": "orc",
+      "tiers": [
+        {
+          "name": "돌 투척수",
+          "hp": 170,
+          "damage": 62,
+          "attackInterval": 2.6,
+          "range": 2.5,
+          "speed": 0.65,
+          "spawnInterval": 19,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.7,
+          "targetLimit": 3
+        },
+        {
+          "name": "바위 투척수",
+          "hp": 306,
+          "damage": 112,
+          "attackInterval": 2.6,
+          "range": 2.5,
+          "speed": 0.65,
+          "spawnInterval": 19,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.7,
+          "targetLimit": 3
+        },
+        {
+          "name": "거석 투척수",
+          "hp": 552,
+          "damage": 202,
+          "attackInterval": 2.6,
+          "range": 2.5,
+          "speed": 0.65,
+          "spawnInterval": 18.05,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.7,
+          "targetLimit": 3
+        },
+        {
+          "name": "분열 바위수",
+          "hp": 816,
+          "damage": 298,
+          "attackInterval": 2.6,
+          "range": 2.5,
+          "speed": 0.65,
+          "spawnInterval": 17.48,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 1,
+          "targetLimit": 4
+        },
+        {
+          "name": "장거리 투척수",
+          "hp": 816,
+          "damage": 298,
+          "attackInterval": 3.2,
+          "range": 3.8,
+          "speed": 0.65,
+          "spawnInterval": 17.48,
+          "effect": "splash",
+          "effectPower": 0,
+          "splash": 0.7,
+          "targetLimit": 3
+        }
+      ]
+    }
+  ]
+}

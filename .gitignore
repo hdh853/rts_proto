@@ -10,4 +10,8 @@ UserSettings/
 *.user
 *.log
 artifacts/
+android-local-paths.json
 .DS_Store
+
+.utmp/
+[Bb]uild/
