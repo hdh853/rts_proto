@@ -37,4 +37,4 @@ Windows 수동 실행: `C:\Users\82102\Documents\Codex\2026-09-12\x20\BackpackRT
 
 `work/v04-Win64.log`, `work/v04-Android.log`, `work/v04-player.log`, `work/v04-captures`가 이번 실행의 진단 경로이다. 자동 화면에는 메인·덱·배치·전장·던전·합성 후보·분기·유닛 정보·타워 사거리·마법 원형·종족별 티어 비교가 포함된다.
 
-현재 소스 컴파일과 독립 규칙 66개는 통과했다. v0.4 Unity 빌드, 실제 화면, Android 실기기 검증은 대기 중이다. v0.3 성공 결과를 v0.4 검증 결과로 사용하지 않는다.
+현재 v0.4 Windows·Android 빌드 및 Unity 검사 69개가 통과했다. 자동 화면 15장이 생성되었고 주요 화면을 확인했다. Android 실기기 터치·성능 검증과 외형 가독성 보완이 남아 있다.
