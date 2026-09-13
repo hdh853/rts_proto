@@ -1,23 +1,35 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 namespace BackpackRTS {
 [Serializable] public struct Cell { public int x,y; public Cell(int x,int y){this.x=x;this.y=y;} }
 [Serializable] public class TierDefinition {
- public string name,effect; public float hp,damage,attackInterval,range,speed,spawnInterval,effectPower,splash; public int targetLimit=1;
+ public string name,effect,projectile; public float detectionRange=4,projectileSpeed=7; public int pierce=1; public float hp,damage,attackInterval,range,speed,spawnInterval,effectPower,splash; public int targetLimit=1;
 }
 [Serializable] public class UnitDefinition {
  public string id,race,name,role,profile; public int cost; public float buildingHp; public Cell[] shape; public TierDefinition[] tiers;
  public TierDefinition Tier(int tier,int branch){return tiers[tier==4?(branch==1?4:3):tier-1];}
 }
+[Serializable] public class CardDefinition {
+ public string id,name,category,behavior; public int cost; public float hp,damage,range,interval,radius,duration;public Cell[] shape;
+}
 [Serializable] public class Catalog {
- public string version; public float refreshSeconds=30,heroRespawnSeconds=20; public UnitDefinition[] units;
+ public string version; public float refreshSeconds=30,heroRespawnSeconds=20; public UnitDefinition[] units; public CardDefinition[] cards;
  public UnitDefinition Find(string id){return Array.Find(units,u=>u.id==id);}
  public List<UnitDefinition> Race(string race){return new List<UnitDefinition>(Array.FindAll(units,u=>u.race==race));}
  public static Catalog Load(){var t=Resources.Load<TextAsset>("balance");if(t==null)throw new Exception("Missing balance.json");return JsonUtility.FromJson<Catalog>(t.text);}
- public bool ValidDeck(string race,string[] ids){if(ids==null||ids.Length!=4)return false;var set=new HashSet<string>();foreach(var id in ids){var u=Find(id);if(u==null||u.race!=race||!set.Add(id))return false;}return true;}
+ public CardDefinition Card(string id){return cards==null?null:Array.Find(cards,c=>c.id==id);}
+ public bool IsSpell(string id)=>Card(id)?.category=="spell";
+ public bool IsTower(string id)=>Card(id)?.behavior=="tower";
+ public string Name(string id)=>Find(id)?.name??Card(id)?.name??id;
+ public IEnumerable<string> Available(string race)=>Race(race).Select(u=>u.id).Concat((cards??new CardDefinition[0]).OrderBy(c=>c.category=="spell"?1:0).Select(c=>c.id));
+ public string[] DefaultDeck(string race)=>Race(race).Take(4).Select(u=>u.id).Concat(new[]{"mine","tower","fence","fire"}).ToArray();
+ public string[] MigrateDeck(string race,string[] old){var allowed=new HashSet<string>(Available(race));return (old??new string[0]).Where(allowed.Contains).Concat(DefaultDeck(race)).Concat(Available(race)).Distinct().Take(8).ToArray();}
+ public bool ValidDeck(string race,string[] ids){if(ids==null||ids.Length!=8)return false;var allowed=new HashSet<string>(Available(race));return ids.All(allowed.Contains)&&ids.Distinct().Count()==8;}
+
 }
 [Serializable] public class Upgrade { public string id; public int level=1; }
 [Serializable] public class SaveData { public int schema=1,stones;public List<Upgrade> upgrades=new List<Upgrade>();public List<int> cleared=new List<int>();public List<string> paid=new List<string>();public string[] humanDeck,orcDeck; }
