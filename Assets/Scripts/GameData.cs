@@ -17,7 +17,7 @@ namespace BackpackRTS {
  public string id,name,category,behavior; public int cost; public float hp,damage,range,interval,radius,duration;public Cell[] shape;
 }
 [Serializable] public class Catalog {
- public string version; public float refreshSeconds=30,heroRespawnSeconds=20; public UnitDefinition[] units; public CardDefinition[] cards;
+ public int[] workerCosts={3,5,8,12,17,23}; public string version; public float refreshSeconds=30,heroRespawnSeconds=20; public UnitDefinition[] units; public CardDefinition[] cards;
  public UnitDefinition Find(string id){return Array.Find(units,u=>u.id==id);}
  public List<UnitDefinition> Race(string race){return new List<UnitDefinition>(Array.FindAll(units,u=>u.race==race));}
  public static Catalog Load(){var t=Resources.Load<TextAsset>("balance");if(t==null)throw new Exception("Missing balance.json");return JsonUtility.FromJson<Catalog>(t.text);}

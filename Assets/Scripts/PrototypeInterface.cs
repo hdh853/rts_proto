@@ -9,7 +9,7 @@ public partial class PrototypeGame {
  Material ghostMaterial,cellMaterial;string previewKey="",previewReason="";bool previewValid;
  void TabbedMenu(){
   Text(new Rect(25,23,340,22),"BACKPACK / RTS",13,gold,true);Text(new Rect(25,59,440,50),screen=="deck"?"전투 덱 편성":screen=="growth"?"유닛 성장":"국경의 전장",29,ink,true);
-  Text(new Rect(386,25,130,28),"스톤 "+store.Data.stones,15,gold);Text(new Rect(25,115,480,30),"세로형 RTS · 0.3.0",13,muted);
+  Text(new Rect(386,25,130,28),"스톤 "+store.Data.stones,15,gold);Text(new Rect(25,115,480,30),"세로형 RTS · 0.4.0",13,muted);
   if(screen=="growth"){GrowthMenu();BottomTabs();return;}
   if(Button(new Rect(25,159,235,44),"휴먼 · 균형",race=="Human"?blue:panel)){ChooseRace("Human");cardScroll=Vector2.zero;}
   if(Button(new Rect(280,159,235,44),"오크 · 정예",race=="Orc"?red:panel)){ChooseRace("Orc");cardScroll=Vector2.zero;}
@@ -39,14 +39,15 @@ public partial class PrototypeGame {
  void SaveDeck(){if(race=="Human")store.Data.humanDeck=deck.ToArray();else store.Data.orcDeck=deck.ToArray();store.Write();}
  void CancelPreviewOnly(){gesture.Cancel();if(preview!=null)Destroy(preview);preview=null;previewKey="";previewReason="";}
  void CancelPlacement(){CancelPreviewOnly();selectedCard=-1;}
- bool PointerCell(Vector2 ui,out int x,out int y){x=y=-1;if(sim==null||uiScale<=0||!arena.Contains(ui))return false;
-  Vector2 real=new Vector2(uiOffset.x+ui.x*uiScale,Screen.height-uiOffset.y-ui.y*uiScale);Ray ray=cam.ScreenPointToRay(real);var plane=new Plane(Vector3.up,Vector3.zero);if(!plane.Raycast(ray,out float enter))return false;Vector3 point=ray.GetPoint(enter);x=Mathf.FloorToInt(point.x+sim.Width(field)/2f);y=Mathf.FloorToInt(point.z+sim.Height(field)/2f);return sim.Inside(field,x,y);
+ bool PointerWorld(Vector2 ui,out Vector2 at){at=Vector2.zero;if(sim==null||uiScale<=0||!arena.Contains(ui))return false;
+  Vector2 real=new Vector2(uiOffset.x+ui.x*uiScale,Screen.height-uiOffset.y-ui.y*uiScale);Ray ray=cam.ScreenPointToRay(real);var plane=new Plane(Vector3.up,Vector3.zero);if(!plane.Raycast(ray,out float enter))return false;Vector3 point=ray.GetPoint(enter);at=new Vector2(point.x+sim.Width(field)/2f,point.z+sim.Height(field)/2f);return sim.Inside(field,Mathf.FloorToInt(at.x),Mathf.FloorToInt(at.y));
  }
+ bool PointerCell(Vector2 ui,out int x,out int y){bool ok=PointerWorld(ui,out var at);x=Mathf.FloorToInt(at.x);y=Mathf.FloorToInt(at.y);return ok;}
  void HandlePlacementInput(){
   if(sim==null||paused||help||sim.result!=-2){CancelPlacement();return;}var e=Event.current;
   if(Input.touchCount>1){CancelPlacement();return;}
   if(e.type==EventType.MouseDown||e.type==EventType.MouseDrag||e.type==EventType.MouseMove||e.type==EventType.MouseUp)pointer=e.mousePosition;
-  if(gesture.active){bool inside=PointerCell(pointer,out int x,out int y);gesture.Move(inside,x,y);if(e.type==EventType.MouseUp){bool placed=gesture.Release(sim,inside,x,y);if(!placed)sim.message="사용 취소 · 카드와 골드 유지";CancelPlacement();e.Use();}else if(e.type==EventType.MouseDrag||e.type==EventType.MouseDown)e.Use();return;}
+  if(gesture.active){bool inside=PointerCell(pointer,out int x,out int y);gesture.Move(inside,x,y);if(e.type==EventType.MouseUp){PointerWorld(pointer,out var at);bool placed=gesture.ReleaseAt(sim,inside,at);if(!placed)sim.message="사용 취소 · 카드와 골드 유지";CancelPlacement();e.Use();}else if(e.type==EventType.MouseDrag||e.type==EventType.MouseDown)e.Use();return;}
   if(selectedCard>=0&&e.type==EventType.MouseDown&&e.button==0){if(PointerCell(pointer,out int x,out int y)){gesture.Begin(selectedCard,field,x,y);e.Use();}else if(arena.Contains(pointer)){CancelPlacement();e.Use();}}
  }
  void UpdatePreview(){
@@ -55,27 +56,19 @@ public partial class PrototypeGame {
   bool inside=PointerCell(pointer,out int x,out int y);if(gesture.active)gesture.Move(inside,x,y);
   if(!inside||gesture.cancelled&&gesture.active){if(preview!=null)preview.SetActive(false);return;}
   string id=sim.players[0].hand[selectedCard];if(id==null){CancelPlacement();return;}
-  previewValid=sim.CanUse(0,selectedCard,field,x,y,out previewReason);string key=id+":"+field;
+  PointerWorld(pointer,out var location);previewValid=sim.CanUseAt(0,selectedCard,field,location,out previewReason);string key=id+":"+field;
   if(ghostMaterial==null){ghostMaterial=new Material(Resources.Load<Shader>("PlacementGhost"));cellMaterial=new Material(Resources.Load<Shader>("PlacementGhost"));}
   if(preview==null||previewKey!=key){if(preview!=null)Destroy(preview);preview=new GameObject("Placement preview");previewKey=key;
    if(!catalog.IsSpell(id)){var shape=sim.Shape(id);var mock=new Building{kind=id,team=0,field=field,x=0,y=0,shape=shape,pos=new Vector2((float)shape.Average(c=>c.x)+.5f,(float)shape.Average(c=>c.y)+.5f)};var model=BuildingModel(mock);model.transform.SetParent(preview.transform,false);model.transform.localPosition=new Vector3(mock.pos.x,0,mock.pos.y);foreach(var renderer in model.GetComponentsInChildren<Renderer>()){renderer.sharedMaterial=ghostMaterial;renderer.shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;}}
-   foreach(var c in sim.Shape(id)){var tile=Part(preview,PrimitiveType.Cube,new Vector3(c.x+.5f,.08f,c.y+.5f),new Vector3(.95f,.035f,.95f),Color.white);tile.GetComponent<Renderer>().sharedMaterial=cellMaterial;tile.GetComponent<Renderer>().shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;}}
-  var color=previewValid?new Color(.2f,1,.45f,.45f):new Color(1,.2f,.18f,.45f);ghostMaterial.color=color;cellMaterial.color=new Color(color.r,color.g,color.b,.3f);preview.transform.position=World(new Vector2(x,y));preview.SetActive(true);
+   if(!catalog.IsSpell(id))foreach(var c in sim.Shape(id)){var tile=Part(preview,PrimitiveType.Cube,new Vector3(c.x+.5f,.08f,c.y+.5f),new Vector3(.95f,.035f,.95f),Color.white);tile.GetComponent<Renderer>().sharedMaterial=cellMaterial;tile.GetComponent<Renderer>().shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;}}
+  var color=previewValid?new Color(.2f,1,.45f,.45f):new Color(1,.2f,.18f,.45f);ghostMaterial.color=color;cellMaterial.color=new Color(color.r,color.g,color.b,.3f);preview.transform.position=World(new Vector2(x,y));preview.SetActive(!catalog.IsSpell(id)&&sim.At(field,x,y)==null);
  }
- void DrawPlacementNotice(){if(selectedCard>=0&&preview!=null&&preview.activeSelf)Text(new Rect(25,139,490,27),previewValid?"건설 가능 · 손을 떼면 사용":previewReason,14,previewValid?new Color(.4f,1,.6f):new Color(1,.45f,.4f));
+ void DrawPlacementNotice(){if(selectedCard>=0&&PointerWorld(pointer,out var noticeAt)&&!(gesture.active&&gesture.cancelled))Text(new Rect(25,139,490,27),previewValid?(catalog.IsSpell(sim.players[0].hand[selectedCard])?"원형 범위 적용 · 손을 떼면 사용":sim.At(field,Mathf.FloorToInt(noticeAt.x),Mathf.FloorToInt(noticeAt.y))!=null?"↑ 직접 합성 · 손을 떼면 T2":"건설 가능 · 손을 떼면 사용"):previewReason,14,previewValid?new Color(.4f,1,.6f):new Color(1,.45f,.4f));
   foreach(var e in sim.effects.Where(e=>e.field==field)){var p=Project(World(e.to,.45f));float size=6+(sim.time-e.time)*28;Box(new Rect(p.x-size/2,p.y-size/2,size,size),new Color(1,.7f,.2f,Mathf.Clamp01(1-(sim.time-e.time)/.35f)));}}
  void DrawWorkers(){foreach(var b in sim.buildings.Where(b=>b.alive&&b.field==field&&b.kind=="mine")){
-  var p=Project(World(b.pos+new Vector2(0,-.35f),.03f));for(int i=0;i<6;i++)Box(new Rect(p.x-18+i*6,p.y,4,5),i<b.workers?gold:new Color(.15f,.18f,.19f));Text(new Rect(p.x-17,p.y+6,40,18),b.workers+"/6",10,gold);}}
+  var p=Project(World(b.pos+new Vector2(0,-.35f),.03f));for(int i=0;i<6;i++)Box(new Rect(p.x-18+i*6,p.y,4,5),i<b.workers?gold:new Color(.15f,.18f,.19f));}}
  void ZoneLines(){float[] rows=field==0?new[]{10f,14f}:new[]{6f};foreach(float row in rows)for(float x=.15f;x<sim.Width(field);x+=.7f)Part(terrainRoot,PrimitiveType.Cube,World(new Vector2(x,row),.035f),new Vector3(.32f,.018f,.035f),new Color(.58f,.31f,.29f));}
- GameObject CompactBuilding(Building b){var root=new GameObject(b.kind+" "+b.id);Color team=b.team==0?blue:red,stone=sim.players[b.team].race=="Orc"?new Color(.43f,.31f,.22f):new Color(.74f,.69f,.55f);
-  foreach(var c in b.shape){var cell=new GameObject("Cell");cell.transform.SetParent(root.transform,false);cell.transform.localPosition=new Vector3(b.x+c.x+.5f-b.pos.x,0,b.y+c.y+.5f-b.pos.y);
-   Part(cell,PrimitiveType.Cube,new Vector3(0,.04f,0),new Vector3(.56f,.08f,.56f),new Color(.29f,.28f,.23f));
-   if(b.kind=="mine"){Part(cell,PrimitiveType.Sphere,new Vector3(0,.22f,0),new Vector3(.55f,.44f,.55f),new Color(.4f,.4f,.35f));Part(cell,PrimitiveType.Cube,new Vector3(0,.18f,-.24f),new Vector3(.23f,.28f,.04f),new Color(.12f,.1f,.08f));Roof(cell,new Vector3(0,.36f,0),.55f,.18f,.55f,gold);}
-   else if(b.kind=="fence"){for(int i=-1;i<=1;i++)Part(cell,PrimitiveType.Cube,new Vector3(i*.20f,.32f,0),new Vector3(.10f,.62f,.22f),stone);Part(cell,PrimitiveType.Cube,new Vector3(0,.33f,-.13f),new Vector3(.56f,.12f,.08f),team);}
-   else if(catalog.IsTower(b.kind)){Part(cell,PrimitiveType.Cylinder,new Vector3(0,.35f,0),new Vector3(.43f,.35f,.43f),stone);Part(cell,PrimitiveType.Cube,new Vector3(0,.72f,0),new Vector3(.56f,.13f,.56f),team);if(b.kind=="magicTower")Part(cell,PrimitiveType.Sphere,new Vector3(0,.92f,0),new Vector3(.23f,.28f,.23f),new Color(.64f,.4f,1));else Part(cell,PrimitiveType.Cube,new Vector3(0,.86f,0),new Vector3(b.kind=="crossbow"?.34f:.1f,.1f,.50f),gold);}
-   else{Part(cell,PrimitiveType.Cube,new Vector3(0,.28f,0),new Vector3(.46f,.48f,.46f),stone);Roof(cell,new Vector3(0,.53f,0),.56f,.23f,.56f,team);Part(cell,PrimitiveType.Cube,new Vector3(0,.18f,-.24f),new Vector3(.16f,.28f,.03f),new Color(.18f,.12f,.08f));}
-  }return root;
- }
+ GameObject CompactBuilding(Building b)=>TierBuilding(b);
  void RenderProjectiles(HashSet<int> alive){foreach(var p in sim.projectiles){if(p.field!=field)continue;alive.Add(p.id);if(!views.TryGetValue(p.id,out var go)){go=new GameObject("Projectile "+p.mode);Part(go,p.mode=="blast"?PrimitiveType.Sphere:PrimitiveType.Cube,Vector3.zero,p.mode=="blast"?new Vector3(.18f,.18f,.18f):new Vector3(.06f,.06f,.36f),p.mode=="blast"?new Color(.85f,.42f,1):gold);views[p.id]=go;viewKeys[p.id]="projectile";}
    float t=Vector2.Distance(p.from,p.pos)/Mathf.Max(.01f,Vector2.Distance(p.from,p.end));go.transform.position=World(p.pos,.45f+(p.mode=="blast"?Mathf.Sin(Mathf.Clamp01(t)*Mathf.PI)*.7f:0));go.transform.rotation=Quaternion.Euler(0,Mathf.Atan2(p.direction.x,p.direction.y)*Mathf.Rad2Deg,0);}}
 }

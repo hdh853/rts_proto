@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "refreshSeconds": 30,
   "heroRespawnSeconds": 20,
   "units": [
@@ -1461,7 +1461,7 @@
       "damage": 0,
       "range": 0,
       "interval": 0,
-      "radius": 0,
+      "radius": 1.25,
       "duration": 10,
       "shape": [
         {
@@ -1489,5 +1489,13 @@
         }
       ]
     }
+  ],
+  "workerCosts": [
+    3,
+    5,
+    8,
+    12,
+    17,
+    23
   ]
 }
