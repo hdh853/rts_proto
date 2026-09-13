@@ -1,0 +1,980 @@
+{
+  "samples_per_group": 200,
+  "days": 180,
+  "seed_base": 853,
+  "model": "scheduled sessions, FIFO manual service at login/battle end; no background autostart; 80% fixed wins; four-minute battles; first elite on sixth win then two normal to one elite attempt mix; pool8 to14 after12wins (first twelve rewards retain pool8); zero initial growth currency; no pity; one race and one eligible hero; no difficulty feedback",
+  "groups": {
+    "casual_focus": {
+      "first_upgrade": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          0.01,
+          0.51,
+          2.0
+        ]
+      },
+      "focus_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          1.5,
+          3.01,
+          8.0
+        ]
+      },
+      "focus_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          4.5,
+          10.0,
+          17.5
+        ]
+      },
+      "focus_SSR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          30.5,
+          43.0,
+          56.5
+        ]
+      },
+      "focus_UR": {
+        "reached_percent": 50.0,
+        "days_p10_p50_p90": [
+          155.5,
+          179.5,
+          null
+        ]
+      },
+      "focus_cap": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_R": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_SR": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "hero": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          17.0,
+          31.5,
+          46.5
+        ]
+      },
+      "snapshots": {
+        "7": {
+          "focus_level": 7.0,
+          "deck_mean_level": 1.75,
+          "claimed": 22.0,
+          "no_chest_wins": 29.0,
+          "stones_balance": 4190.0,
+          "race_balance": 3.0
+        },
+        "30": {
+          "focus_level": 13.0,
+          "deck_mean_level": 2.5,
+          "claimed": 94.0,
+          "no_chest_wins": 140.0,
+          "stones_balance": 20190.0,
+          "race_balance": 18.0
+        },
+        "90": {
+          "focus_level": 20.0,
+          "deck_mean_level": 3.38,
+          "claimed": 282.0,
+          "no_chest_wins": 430.0,
+          "stones_balance": 64180.0,
+          "race_balance": 60.0
+        },
+        "180": {
+          "focus_level": 25.5,
+          "deck_mean_level": 4.06,
+          "claimed": 568.0,
+          "no_chest_wins": 868.0,
+          "stones_balance": 129230.0,
+          "race_balance": 125.5
+        }
+      }
+    },
+    "casual_balanced": {
+      "first_upgrade": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          0.01,
+          0.01,
+          0.5
+        ]
+      },
+      "focus_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          1.5,
+          3.5,
+          9.0
+        ]
+      },
+      "focus_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          9.5,
+          16.5,
+          26.0
+        ]
+      },
+      "focus_SSR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          49.5,
+          57.0,
+          69.0
+        ]
+      },
+      "focus_UR": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "focus_cap": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          5.5,
+          11.0,
+          20.0
+        ]
+      },
+      "deck_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          28.5,
+          41.0,
+          55.5
+        ]
+      },
+      "hero": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          17.0,
+          31.5,
+          46.5
+        ]
+      },
+      "snapshots": {
+        "7": {
+          "focus_level": 7.0,
+          "deck_mean_level": 5.75,
+          "claimed": 22.0,
+          "no_chest_wins": 29.0,
+          "stones_balance": 1300.0,
+          "race_balance": 0.0
+        },
+        "30": {
+          "focus_level": 13.0,
+          "deck_mean_level": 11.38,
+          "claimed": 94.0,
+          "no_chest_wins": 140.0,
+          "stones_balance": 2350.0,
+          "race_balance": 1.0
+        },
+        "90": {
+          "focus_level": 19.0,
+          "deck_mean_level": 17.38,
+          "claimed": 282.0,
+          "no_chest_wins": 430.0,
+          "stones_balance": 1160.0,
+          "race_balance": 4.0
+        },
+        "180": {
+          "focus_level": 23.0,
+          "deck_mean_level": 21.62,
+          "claimed": 568.0,
+          "no_chest_wins": 868.0,
+          "stones_balance": 1875.0,
+          "race_balance": 61.0
+        }
+      }
+    },
+    "standard_focus": {
+      "first_upgrade": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          0.01,
+          0.22,
+          1.21
+        ]
+      },
+      "focus_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          1.0,
+          2.01,
+          5.21
+        ]
+      },
+      "focus_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          3.0,
+          6.54,
+          11.54
+        ]
+      },
+      "focus_SSR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          20.0,
+          29.54,
+          38.54
+        ]
+      },
+      "focus_UR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          105.54,
+          123.54,
+          143.21
+        ]
+      },
+      "focus_cap": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_R": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_SR": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "hero": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          11.21,
+          20.54,
+          32.54
+        ]
+      },
+      "snapshots": {
+        "7": {
+          "focus_level": 9.0,
+          "deck_mean_level": 2.0,
+          "claimed": 32.0,
+          "no_chest_wins": 46.0,
+          "stones_balance": 6430.0,
+          "race_balance": 4.0
+        },
+        "30": {
+          "focus_level": 16.0,
+          "deck_mean_level": 2.88,
+          "claimed": 138.0,
+          "no_chest_wins": 216.5,
+          "stones_balance": 30040.0,
+          "race_balance": 27.0
+        },
+        "90": {
+          "focus_level": 23.0,
+          "deck_mean_level": 3.75,
+          "claimed": 417.0,
+          "no_chest_wins": 659.0,
+          "stones_balance": 94790.0,
+          "race_balance": 93.0
+        },
+        "180": {
+          "focus_level": 29.0,
+          "deck_mean_level": 4.5,
+          "claimed": 836.0,
+          "no_chest_wins": 1321.0,
+          "stones_balance": 188360.0,
+          "race_balance": 182.0
+        }
+      }
+    },
+    "standard_balanced": {
+      "first_upgrade": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          0.01,
+          0.01,
+          0.21
+        ]
+      },
+      "focus_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          1.0,
+          2.54,
+          6.0
+        ]
+      },
+      "focus_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          6.21,
+          11.0,
+          18.0
+        ]
+      },
+      "focus_SSR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          33.22,
+          38.54,
+          48.21
+        ]
+      },
+      "focus_UR": {
+        "reached_percent": 69.0,
+        "days_p10_p50_p90": [
+          168.0,
+          176.0,
+          null
+        ]
+      },
+      "focus_cap": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          4.0,
+          7.54,
+          14.0
+        ]
+      },
+      "deck_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          19.54,
+          26.54,
+          37.21
+        ]
+      },
+      "hero": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          11.21,
+          20.54,
+          32.54
+        ]
+      },
+      "snapshots": {
+        "7": {
+          "focus_level": 9.0,
+          "deck_mean_level": 7.5,
+          "claimed": 32.0,
+          "no_chest_wins": 46.0,
+          "stones_balance": 1450.0,
+          "race_balance": 0.0
+        },
+        "30": {
+          "focus_level": 15.0,
+          "deck_mean_level": 13.88,
+          "claimed": 138.0,
+          "no_chest_wins": 216.5,
+          "stones_balance": 560.0,
+          "race_balance": 3.0
+        },
+        "90": {
+          "focus_level": 21.0,
+          "deck_mean_level": 19.62,
+          "claimed": 417.0,
+          "no_chest_wins": 659.0,
+          "stones_balance": 1650.0,
+          "race_balance": 17.0
+        },
+        "180": {
+          "focus_level": 26.0,
+          "deck_mean_level": 24.12,
+          "claimed": 836.0,
+          "no_chest_wins": 1321.0,
+          "stones_balance": 2265.0,
+          "race_balance": 92.5
+        }
+      }
+    },
+    "active_focus": {
+      "first_upgrade": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          0.01,
+          0.18,
+          1.01
+        ]
+      },
+      "focus_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          0.58,
+          1.58,
+          4.0
+        ]
+      },
+      "focus_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          2.58,
+          5.17,
+          8.58
+        ]
+      },
+      "focus_SSR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          15.58,
+          22.0,
+          30.17
+        ]
+      },
+      "focus_UR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          77.0,
+          89.38,
+          103.38
+        ]
+      },
+      "focus_cap": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_R": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_SR": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "hero": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          8.38,
+          15.0,
+          22.0
+        ]
+      },
+      "snapshots": {
+        "7": {
+          "focus_level": 10.0,
+          "deck_mean_level": 2.12,
+          "claimed": 43.0,
+          "no_chest_wins": 109.0,
+          "stones_balance": 9380.0,
+          "race_balance": 6.0
+        },
+        "30": {
+          "focus_level": 17.0,
+          "deck_mean_level": 3.0,
+          "claimed": 189.0,
+          "no_chest_wins": 479.0,
+          "stones_balance": 43070.0,
+          "race_balance": 38.0
+        },
+        "90": {
+          "focus_level": 26.0,
+          "deck_mean_level": 4.12,
+          "claimed": 565.5,
+          "no_chest_wins": 1442.5,
+          "stones_balance": 130200.0,
+          "race_balance": 128.0
+        },
+        "180": {
+          "focus_level": 32.0,
+          "deck_mean_level": 4.88,
+          "claimed": 1131.5,
+          "no_chest_wins": 2892.0,
+          "stones_balance": 257730.0,
+          "race_balance": 270.0
+        }
+      }
+    },
+    "active_balanced": {
+      "first_upgrade": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          0.01,
+          0.01,
+          0.17
+        ]
+      },
+      "focus_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          1.0,
+          2.0,
+          4.17
+        ]
+      },
+      "focus_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          4.58,
+          7.58,
+          12.0
+        ]
+      },
+      "focus_SSR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          23.58,
+          28.38,
+          35.38
+        ]
+      },
+      "focus_UR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          121.58,
+          128.38,
+          134.0
+        ]
+      },
+      "focus_cap": {
+        "reached_percent": 0.0,
+        "days_p10_p50_p90": [
+          null,
+          null,
+          null
+        ]
+      },
+      "deck_R": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          3.38,
+          5.58,
+          9.38
+        ]
+      },
+      "deck_SR": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          13.0,
+          19.0,
+          25.17
+        ]
+      },
+      "hero": {
+        "reached_percent": 100.0,
+        "days_p10_p50_p90": [
+          8.38,
+          15.0,
+          22.0
+        ]
+      },
+      "snapshots": {
+        "7": {
+          "focus_level": 9.0,
+          "deck_mean_level": 8.75,
+          "claimed": 43.0,
+          "no_chest_wins": 109.0,
+          "stones_balance": 2450.0,
+          "race_balance": 0.0
+        },
+        "30": {
+          "focus_level": 16.0,
+          "deck_mean_level": 15.5,
+          "claimed": 189.0,
+          "no_chest_wins": 479.0,
+          "stones_balance": 812.5,
+          "race_balance": 4.0
+        },
+        "90": {
+          "focus_level": 23.0,
+          "deck_mean_level": 21.62,
+          "claimed": 565.5,
+          "no_chest_wins": 1442.5,
+          "stones_balance": 1732.5,
+          "race_balance": 62.0
+        },
+        "180": {
+          "focus_level": 29.0,
+          "deck_mean_level": 26.38,
+          "claimed": 1131.5,
+          "no_chest_wins": 2892.0,
+          "stones_balance": 2940.0,
+          "race_balance": 94.0
+        }
+      }
+    }
+  },
+  "sensitivity_standard_8minute_balanced": {
+    "first_upgrade": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        0.01,
+        0.21,
+        0.21
+      ]
+    },
+    "focus_R": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        1.54,
+        3.0,
+        6.54
+      ]
+    },
+    "focus_SR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        6.21,
+        11.54,
+        18.0
+      ]
+    },
+    "focus_SSR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        34.0,
+        39.21,
+        48.54
+      ]
+    },
+    "focus_UR": {
+      "reached_percent": 49.0,
+      "days_p10_p50_p90": [
+        170.21,
+        null,
+        null
+      ]
+    },
+    "focus_cap": {
+      "reached_percent": 0.0,
+      "days_p10_p50_p90": [
+        null,
+        null,
+        null
+      ]
+    },
+    "deck_R": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        4.54,
+        8.0,
+        13.54
+      ]
+    },
+    "deck_SR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        19.54,
+        27.54,
+        37.54
+      ]
+    },
+    "hero": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        12.21,
+        20.54,
+        31.0
+      ]
+    },
+    "snapshots": {
+      "7": {
+        "focus_level": 9.0,
+        "deck_mean_level": 6.88,
+        "claimed": 30.0,
+        "no_chest_wins": 0.0,
+        "stones_balance": 1430.0,
+        "race_balance": 0.0
+      },
+      "30": {
+        "focus_level": 15.0,
+        "deck_mean_level": 13.75,
+        "claimed": 133.0,
+        "no_chest_wins": 7.0,
+        "stones_balance": 570.0,
+        "race_balance": 3.0
+      },
+      "90": {
+        "focus_level": 21.0,
+        "deck_mean_level": 19.5,
+        "claimed": 405.0,
+        "no_chest_wins": 24.0,
+        "stones_balance": 1320.0,
+        "race_balance": 19.5
+      },
+      "180": {
+        "focus_level": 25.0,
+        "deck_mean_level": 23.88,
+        "claimed": 809.0,
+        "no_chest_wins": 50.5,
+        "stones_balance": 2390.0,
+        "race_balance": 105.0
+      }
+    }
+  },
+  "sensitivity_standard_elite_only_balanced": {
+    "first_upgrade": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        0.01,
+        0.01,
+        0.21
+      ]
+    },
+    "focus_R": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        1.0,
+        2.0,
+        4.0
+      ]
+    },
+    "focus_SR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        4.0,
+        6.54,
+        10.54
+      ]
+    },
+    "focus_SSR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        23.0,
+        26.21,
+        32.54
+      ]
+    },
+    "focus_UR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        113.21,
+        119.0,
+        124.54
+      ]
+    },
+    "focus_cap": {
+      "reached_percent": 0.0,
+      "days_p10_p50_p90": [
+        null,
+        null,
+        null
+      ]
+    },
+    "deck_R": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        2.54,
+        4.54,
+        8.0
+      ]
+    },
+    "deck_SR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        11.21,
+        15.54,
+        21.21
+      ]
+    },
+    "hero": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        7.21,
+        12.0,
+        18.0
+      ]
+    },
+    "snapshots": {
+      "7": {
+        "focus_level": 9.0,
+        "deck_mean_level": 8.88,
+        "claimed": 22.0,
+        "no_chest_wins": 57.0,
+        "stones_balance": 1520.0,
+        "race_balance": 1.0
+      },
+      "30": {
+        "focus_level": 16.0,
+        "deck_mean_level": 15.75,
+        "claimed": 89.0,
+        "no_chest_wins": 266.0,
+        "stones_balance": 712.5,
+        "race_balance": 4.0
+      },
+      "90": {
+        "focus_level": 23.0,
+        "deck_mean_level": 22.06,
+        "claimed": 262.0,
+        "no_chest_wins": 813.0,
+        "stones_balance": 1957.5,
+        "race_balance": 109.5
+      },
+      "180": {
+        "focus_level": 29.0,
+        "deck_mean_level": 27.0,
+        "claimed": 524.0,
+        "no_chest_wins": 1632.5,
+        "stones_balance": 3457.5,
+        "race_balance": 190.0
+      }
+    }
+  },
+  "sensitivity_standard_chapter1_balanced": {
+    "first_upgrade": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        0.01,
+        0.01,
+        0.21
+      ]
+    },
+    "focus_R": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        1.0,
+        2.54,
+        5.54
+      ]
+    },
+    "focus_SR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        5.54,
+        9.54,
+        16.54
+      ]
+    },
+    "focus_SSR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        33.21,
+        38.0,
+        46.0
+      ]
+    },
+    "focus_UR": {
+      "reached_percent": 85.5,
+      "days_p10_p50_p90": [
+        163.54,
+        172.21,
+        null
+      ]
+    },
+    "focus_cap": {
+      "reached_percent": 0.0,
+      "days_p10_p50_p90": [
+        null,
+        null,
+        null
+      ]
+    },
+    "deck_R": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        3.54,
+        6.54,
+        13.0
+      ]
+    },
+    "deck_SR": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        17.54,
+        26.21,
+        38.54
+      ]
+    },
+    "hero": {
+      "reached_percent": 100.0,
+      "days_p10_p50_p90": [
+        12.0,
+        20.0,
+        29.54
+      ]
+    },
+    "snapshots": {
+      "7": {
+        "focus_level": 9.0,
+        "deck_mean_level": 8.0,
+        "claimed": 32.0,
+        "no_chest_wins": 46.5,
+        "stones_balance": 290.0,
+        "race_balance": 0.0
+      },
+      "30": {
+        "focus_level": 15.0,
+        "deck_mean_level": 13.75,
+        "claimed": 139.0,
+        "no_chest_wins": 216.0,
+        "stones_balance": 580.0,
+        "race_balance": 3.0
+      },
+      "90": {
+        "focus_level": 21.0,
+        "deck_mean_level": 19.75,
+        "claimed": 417.0,
+        "no_chest_wins": 656.5,
+        "stones_balance": 1427.5,
+        "race_balance": 21.0
+      },
+      "180": {
+        "focus_level": 26.0,
+        "deck_mean_level": 24.25,
+        "claimed": 835.5,
+        "no_chest_wins": 1317.0,
+        "stones_balance": 2402.5,
+        "race_balance": 74.5
+      }
+    }
+  }
+}
