@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace BackpackRTS.Meta {
-    public sealed class MetaRules {
+    public sealed partial class MetaRules {
         public readonly MetaDefinition Data;
         public MetaRules(MetaDefinition data) { Data = data; ValidateDefinition(); }
         static void Need(bool value, string error) { if (!value) throw new MetaError(error); }
@@ -14,6 +14,7 @@ namespace BackpackRTS.Meta {
         public GrowthCost Cost(CardState card) { Card(card.id); return Data.levels.FirstOrDefault(c=>c.rank==card.rank && c.fromLevel==card.level); }
         public void ValidateDefinition() {
             Need(Data != null && !string.IsNullOrEmpty(Data.version), "invalid_definition");
+            Need(Data.levelStatIncrement>=0 && !double.IsInfinity(Data.levelStatIncrement),"invalid_growth_increment");
             Need(Data.cards != null && Data.cards.Length==20 && Data.cards.Select(x=>x.id).Distinct().Count()==20, "invalid_cards");
             Need(Data.chests != null && Data.chests.Length==5 && Data.evolutionCosts != null && Data.evolutionCosts.SequenceEqual(new[]{1,3,8,20}), "invalid_economy");
             foreach(var weights in new[]{Data.normalWeights,Data.eliteWeights}) Need(weights!=null && weights.Length==5 && weights.All(w=>w>=0) && Math.Abs(weights.Sum()-1)<1e-9, "invalid_weights");
@@ -25,6 +26,7 @@ namespace BackpackRTS.Meta {
                 Need(costs.All(x=>x.copies>0 && x.stones>0),"invalid_cost");
             }
             foreach(var card in Data.cards) Need((card.race=="Human" || card.race=="Orc" || card.race=="Shared") && card.maxRank>=0 && card.maxRank<5 && card.maxLevel>start[card.maxRank] && card.maxLevel<=end[card.maxRank],"invalid_cap");
+            Need(Data.cards.All(c=>new[]{"health","damage","duration","healthAndDamage"}.Contains(c.growthStatPolicy)),"invalid_growth_policy");
             foreach(var chest in Data.chests) Need(chest.minutes>0 && chest.bundles>0 && chest.bundles<=5 && chest.copies>=chest.bundles && chest.stones>=0 && new[]{chest.raceChance,chest.shardChance,chest.heroChance}.All(p=>p>=0 && p<=1) && chest.raceMin>=0 && chest.raceMax>=chest.raceMin && chest.shardMin>=0 && chest.shardMax>=chest.shardMin,"invalid_chest");
             Need(Data.heroUnlockShards>0 && Data.heroDuplicateShards>0 && Data.ownedHeroShardStoneConversion>0 && Data.maxedCardStoneConversion>0,"invalid_conversion");
         }

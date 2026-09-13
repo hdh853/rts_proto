@@ -10,7 +10,9 @@
     <Compile Include="../../Assets/Scripts/Meta/MetaModels.cs" />
     <Compile Include="../../Assets/Scripts/Meta/MetaRules.cs" />
     <Compile Include="../../Assets/Scripts/Meta/MetaService.cs" />
+    <Compile Include="../../Assets/Scripts/Meta/MetaGrowth.cs" />
     <Compile Include="../../Assets/Scripts/Meta/MetaFileRepository.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="GrowthChecks.cs" />
   </ItemGroup>
 </Project>

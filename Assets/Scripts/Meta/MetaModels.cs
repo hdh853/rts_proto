@@ -38,7 +38,19 @@ namespace BackpackRTS.Meta {
         public int stage; public bool eligible, elite;
         public long expiresAt; public string[] pool;
     }
-    [Serializable] public class Receipt { public string id, payload, chestId; public long revision, at; public Loot loot; }
+    [Serializable] public class Receipt { public string id, payload, chestId; public long revision, at; public Loot loot; public GrowthChange growth; }
+    [Serializable] public class GrowthMultipliers { public double health=1, damage=1, duration=1; }
+    [Serializable] public class GrowthQuote {
+        public string cardId, action, reason, raceStone, growthStatPolicy;
+        public long revision, ownedCopies, ownedStones, ownedRaceStones;
+        public int level, rank, nextLevel, nextRank, maxLevel, maxRank, copiesCost, stonesCost, raceStonesCost;
+        public bool canExecute, skillEffectsAvailable;
+        public GrowthMultipliers current, next;
+    }
+    [Serializable] public class GrowthChange {
+        public string cardId, action, raceStone;
+        public int oldLevel, newLevel, oldRank, newRank, copiesSpent, stonesSpent, raceStonesSpent;
+    }
     [Serializable] public class LegacyUpgrade { public string id; public int level = 1; }
     [Serializable] public class LegacySave {
         public int schema = 1, stones;
@@ -73,6 +85,6 @@ namespace BackpackRTS.Meta {
     public sealed class MetaError : Exception { public MetaError(string code) : base(code) {} }
     public sealed class MetaResult {
         public bool success, replayed; public string error, chestId;
-        public long revision; public Loot loot;
+        public long revision; public Loot loot; public GrowthChange growth;
     }
 }

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace BackpackRTS.Meta {
     // Local validation adapter: CompleteBattle is NOT an authoritative online victory verifier.
-    public sealed class MetaService {
+    public sealed partial class MetaService {
         readonly MetaRules rules; readonly IMetaRepository repository;
         readonly IMetaCodec codec; readonly IMetaClock clock; readonly IMetaRandom random;
         public MetaService(MetaRules rules, IMetaRepository repository, IMetaCodec codec, IMetaClock clock, IMetaRandom random) {
@@ -17,7 +17,7 @@ namespace BackpackRTS.Meta {
                 var state=Read(); var previous=state.receipts.FirstOrDefault(x=>x.id==id);
                 if(previous!=null) {
                     Need(previous.payload==payload,"command_id_reused");
-                    return new MetaResult { success=true, replayed=true, revision=previous.revision, chestId=previous.chestId, loot=previous.loot };
+                    return new MetaResult { success=true, replayed=true, revision=previous.revision, chestId=previous.chestId, loot=previous.loot, growth=previous.growth };
                 }
                 Need(state.revision==expectedRevision,"revision_conflict");
                 var next=codec.Decode<MetaState>(codec.Encode(state));
@@ -26,7 +26,7 @@ namespace BackpackRTS.Meta {
                 next.receipts.Add(receipt);
                 if(next.receipts.Count>128)next.receipts.RemoveAt(0);
                 rules.Validate(next); repository.Save(next,state.revision);
-                return new MetaResult { success=true, revision=next.revision, chestId=receipt.chestId, loot=receipt.loot };
+                return new MetaResult { success=true, revision=next.revision, chestId=receipt.chestId, loot=receipt.loot, growth=receipt.growth };
             } catch(MetaError ex) { return new MetaResult { error=ex.Message }; }
             catch(System.IO.IOException) { return new MetaResult { error="storage_failure" }; }
             catch(UnauthorizedAccessException) { return new MetaResult { error="storage_failure" }; }
