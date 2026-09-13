@@ -1,0 +1,484 @@
+{
+  "evolutionCosts": [
+    1,
+    3,
+    8,
+    20
+  ],
+  "chests": [
+    {
+      "id": "N",
+      "minutes": 5,
+      "copies": 6,
+      "bundles": 2,
+      "stones": 40,
+      "raceChance": 0,
+      "raceMin": 0,
+      "raceMax": 0,
+      "shardChance": 0,
+      "shardMin": 0,
+      "shardMax": 0,
+      "heroChance": 0
+    },
+    {
+      "id": "R",
+      "minutes": 30,
+      "copies": 20,
+      "bundles": 2,
+      "stones": 140,
+      "raceChance": 0.001,
+      "raceMin": 1,
+      "raceMax": 1,
+      "shardChance": 0.05,
+      "shardMin": 1,
+      "shardMax": 1,
+      "heroChance": 0
+    },
+    {
+      "id": "SR",
+      "minutes": 120,
+      "copies": 60,
+      "bundles": 3,
+      "stones": 500,
+      "raceChance": 0.2,
+      "raceMin": 1,
+      "raceMax": 3,
+      "shardChance": 0.2,
+      "shardMin": 2,
+      "shardMax": 4,
+      "heroChance": 0.0005
+    },
+    {
+      "id": "SSR",
+      "minutes": 360,
+      "copies": 180,
+      "bundles": 4,
+      "stones": 1600,
+      "raceChance": 1,
+      "raceMin": 3,
+      "raceMax": 5,
+      "shardChance": 0.5,
+      "shardMin": 5,
+      "shardMax": 10,
+      "heroChance": 0.005
+    },
+    {
+      "id": "UR",
+      "minutes": 720,
+      "copies": 500,
+      "bundles": 5,
+      "stones": 5000,
+      "raceChance": 1,
+      "raceMin": 8,
+      "raceMax": 12,
+      "shardChance": 1,
+      "shardMin": 15,
+      "shardMax": 25,
+      "heroChance": 0.02
+    }
+  ],
+  "heroUnlockShards": 30,
+  "heroDuplicateShards": 30,
+  "ownedHeroShardStoneConversion": 100,
+  "maxedCardStoneConversion": 5,
+  "levelStatIncrement": 0.02,
+  "version": "meta-design-1",
+  "levels": [
+    {
+      "rank": 0,
+      "fromLevel": 1,
+      "copies": 2,
+      "stones": 20
+    },
+    {
+      "rank": 0,
+      "fromLevel": 2,
+      "copies": 4,
+      "stones": 40
+    },
+    {
+      "rank": 0,
+      "fromLevel": 3,
+      "copies": 6,
+      "stones": 80
+    },
+    {
+      "rank": 1,
+      "fromLevel": 4,
+      "copies": 8,
+      "stones": 100
+    },
+    {
+      "rank": 1,
+      "fromLevel": 5,
+      "copies": 10,
+      "stones": 140
+    },
+    {
+      "rank": 1,
+      "fromLevel": 6,
+      "copies": 12,
+      "stones": 180
+    },
+    {
+      "rank": 1,
+      "fromLevel": 7,
+      "copies": 15,
+      "stones": 240
+    },
+    {
+      "rank": 1,
+      "fromLevel": 8,
+      "copies": 18,
+      "stones": 320
+    },
+    {
+      "rank": 2,
+      "fromLevel": 9,
+      "copies": 22,
+      "stones": 420
+    },
+    {
+      "rank": 2,
+      "fromLevel": 10,
+      "copies": 26,
+      "stones": 540
+    },
+    {
+      "rank": 2,
+      "fromLevel": 11,
+      "copies": 30,
+      "stones": 680
+    },
+    {
+      "rank": 2,
+      "fromLevel": 12,
+      "copies": 35,
+      "stones": 840
+    },
+    {
+      "rank": 2,
+      "fromLevel": 13,
+      "copies": 40,
+      "stones": 1020
+    },
+    {
+      "rank": 2,
+      "fromLevel": 14,
+      "copies": 46,
+      "stones": 1220
+    },
+    {
+      "rank": 2,
+      "fromLevel": 15,
+      "copies": 52,
+      "stones": 1440
+    },
+    {
+      "rank": 3,
+      "fromLevel": 16,
+      "copies": 60,
+      "stones": 1680
+    },
+    {
+      "rank": 3,
+      "fromLevel": 17,
+      "copies": 68,
+      "stones": 1940
+    },
+    {
+      "rank": 3,
+      "fromLevel": 18,
+      "copies": 76,
+      "stones": 2220
+    },
+    {
+      "rank": 3,
+      "fromLevel": 19,
+      "copies": 85,
+      "stones": 2520
+    },
+    {
+      "rank": 3,
+      "fromLevel": 20,
+      "copies": 94,
+      "stones": 2840
+    },
+    {
+      "rank": 3,
+      "fromLevel": 21,
+      "copies": 104,
+      "stones": 3180
+    },
+    {
+      "rank": 3,
+      "fromLevel": 22,
+      "copies": 114,
+      "stones": 3540
+    },
+    {
+      "rank": 3,
+      "fromLevel": 23,
+      "copies": 125,
+      "stones": 3920
+    },
+    {
+      "rank": 3,
+      "fromLevel": 24,
+      "copies": 136,
+      "stones": 4320
+    },
+    {
+      "rank": 3,
+      "fromLevel": 25,
+      "copies": 148,
+      "stones": 4740
+    },
+    {
+      "rank": 4,
+      "fromLevel": 26,
+      "copies": 160,
+      "stones": 5180
+    },
+    {
+      "rank": 4,
+      "fromLevel": 27,
+      "copies": 172,
+      "stones": 5640
+    },
+    {
+      "rank": 4,
+      "fromLevel": 28,
+      "copies": 184,
+      "stones": 6100
+    },
+    {
+      "rank": 4,
+      "fromLevel": 29,
+      "copies": 196,
+      "stones": 6560
+    },
+    {
+      "rank": 4,
+      "fromLevel": 30,
+      "copies": 208,
+      "stones": 7020
+    },
+    {
+      "rank": 4,
+      "fromLevel": 31,
+      "copies": 220,
+      "stones": 7480
+    },
+    {
+      "rank": 4,
+      "fromLevel": 32,
+      "copies": 232,
+      "stones": 7940
+    },
+    {
+      "rank": 4,
+      "fromLevel": 33,
+      "copies": 244,
+      "stones": 8400
+    },
+    {
+      "rank": 4,
+      "fromLevel": 34,
+      "copies": 256,
+      "stones": 8860
+    },
+    {
+      "rank": 4,
+      "fromLevel": 35,
+      "copies": 268,
+      "stones": 9320
+    },
+    {
+      "rank": 4,
+      "fromLevel": 36,
+      "copies": 280,
+      "stones": 9780
+    },
+    {
+      "rank": 4,
+      "fromLevel": 37,
+      "copies": 292,
+      "stones": 10240
+    },
+    {
+      "rank": 4,
+      "fromLevel": 38,
+      "copies": 304,
+      "stones": 10700
+    },
+    {
+      "rank": 4,
+      "fromLevel": 39,
+      "copies": 316,
+      "stones": 11160
+    },
+    {
+      "rank": 4,
+      "fromLevel": 40,
+      "copies": 328,
+      "stones": 11620
+    }
+  ],
+  "cards": [
+    {
+      "id": "H01",
+      "race": "Human",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 36
+    },
+    {
+      "id": "H02",
+      "race": "Human",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 38
+    },
+    {
+      "id": "H03",
+      "race": "Human",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 40
+    },
+    {
+      "id": "H04",
+      "race": "Human",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 41
+    },
+    {
+      "id": "H05",
+      "race": "Human",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 36
+    },
+    {
+      "id": "H06",
+      "race": "Human",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 38
+    },
+    {
+      "id": "O01",
+      "race": "Orc",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 36
+    },
+    {
+      "id": "O02",
+      "race": "Orc",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 38
+    },
+    {
+      "id": "O03",
+      "race": "Orc",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 40
+    },
+    {
+      "id": "O04",
+      "race": "Orc",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 41
+    },
+    {
+      "id": "O05",
+      "race": "Orc",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 36
+    },
+    {
+      "id": "O06",
+      "race": "Orc",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 38
+    },
+    {
+      "id": "mine",
+      "race": "Shared",
+      "growthStatPolicy": "health",
+      "maxRank": 2,
+      "maxLevel": 16
+    },
+    {
+      "id": "fence",
+      "race": "Shared",
+      "growthStatPolicy": "health",
+      "maxRank": 3,
+      "maxLevel": 26
+    },
+    {
+      "id": "tower",
+      "race": "Shared",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 36
+    },
+    {
+      "id": "crossbow",
+      "race": "Shared",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 38
+    },
+    {
+      "id": "magicTower",
+      "race": "Shared",
+      "growthStatPolicy": "healthAndDamage",
+      "maxRank": 4,
+      "maxLevel": 41
+    },
+    {
+      "id": "rally",
+      "race": "Shared",
+      "growthStatPolicy": "duration",
+      "maxRank": 3,
+      "maxLevel": 26
+    },
+    {
+      "id": "mining",
+      "race": "Shared",
+      "growthStatPolicy": "duration",
+      "maxRank": 2,
+      "maxLevel": 16
+    },
+    {
+      "id": "fire",
+      "race": "Shared",
+      "growthStatPolicy": "damage",
+      "maxRank": 4,
+      "maxLevel": 38
+    }
+  ],
+  "normalWeights": [
+    0.6,
+    0.37,
+    0.029,
+    0.001,
+    0
+  ],
+  "eliteWeights": [
+    0,
+    0,
+    0.9,
+    0.099,
+    0.001
+  ]
+}

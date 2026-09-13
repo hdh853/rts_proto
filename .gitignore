@@ -7,6 +7,8 @@ UserSettings/
 .vs/
 *.csproj
 *.sln
+[Bb]in/
+!Tests/MetaFoundation/MetaFoundation.csproj
 *.user
 *.log
 artifacts/
