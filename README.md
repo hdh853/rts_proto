@@ -1,6 +1,6 @@
 # Backpack RTS Prototype
 
-현재 v0.5 개발 브랜치: 드래그 합성·광산 합성 금지·8분 제한·연속 이동을 적용했다. 소스 컴파일/독립 규칙 88개 통과, Unity 빌드 대기.
+현재 v0.5 개발 브랜치: 드래그 합성·광산 합성 금지·8분 제한·연속 이동을 적용했다. Windows·Android 빌드와 Unity 검사 91개 통과. 실기기 드래그·이동 확인 대기.
 
 - [v0.5 명세](docs/specs/005-drag-merge-smooth-movement.md)
 - [v0.5 테스트 안내](docs/testing-v05.md)
