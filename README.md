@@ -1,6 +1,11 @@
 # Backpack RTS Prototype
 
-현재 v0.4 개발 브랜치. 티어별 자체 3D 모형·합성 후보 강조·유닛 정보·원형 마법·직접 합성 및 이동 오류 수정. Windows·Android 빌드 및 Unity 검사 69개 통과. 자동 화면 확인 완료, 실기기 테스트와 아트 가독성 보완 대기.
+현재 v0.5 개발 브랜치: 드래그 합성·광산 합성 금지·8분 제한·연속 이동을 적용했다. Windows·Android 빌드와 Unity 검사 91개 통과. 실기기 드래그·이동 확인 대기.
+
+- [v0.5 명세](docs/specs/005-drag-merge-smooth-movement.md)
+- [v0.5 테스트 안내](docs/testing-v05.md)
+
+이전 v0.4: 티어별 자체 3D 모형·합성 후보 강조·유닛 정보·원형 마법·직접 합성 및 이동 오류 수정. Windows·Android 빌드 및 Unity 검사 69개 통과. 자동 화면 확인 완료, 실기기 테스트와 아트 가독성 보완 대기.
 
 - [v0.4 명세](docs/specs/004-visual-tiers-selection-navigation.md)
 - [v0.4 실행 및 테스트](docs/testing-v04.md)
