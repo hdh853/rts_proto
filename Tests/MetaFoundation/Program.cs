@@ -33,6 +33,7 @@ class Program {
     static void Run(string[] args) {
         string root=Path.GetFullPath(args[0]);
         rules=new MetaRules(codec.Decode<MetaDefinition>(File.ReadAllText(Path.Combine(root,"Assets/Resources/meta-economy.json"))));
+        GrowthChecks.Run(root,rules,Check);
         Check(rules.Data.levels.Sum(x=>x.copies)==4996 && rules.Data.levels.Sum(x=>x.stones)==164180,"approved forty-level costs");
         var fresh=rules.Create();
         Check(fresh.cards.Count(c=>c.unlocked)==12 && fresh.cards.All(c=>c.copies==0) && fresh.stones==0,"starter decks share four common cards and grant no materials");
