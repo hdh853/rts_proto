@@ -9,7 +9,7 @@ public partial class PrototypeGame {
  Material ghostMaterial,cellMaterial;string previewKey="",previewReason="";bool previewValid;
  void TabbedMenu(){
   Text(new Rect(25,23,340,22),"BACKPACK / RTS",13,gold,true);Text(new Rect(25,59,440,50),screen=="deck"?"전투 덱 편성":screen=="growth"?"유닛 성장":"국경의 전장",29,ink,true);
-  Text(new Rect(386,25,130,28),"스톤 "+store.Data.stones,15,gold);Text(new Rect(25,115,480,30),"세로형 RTS · 0.4.0",13,muted);
+  Text(new Rect(386,25,130,28),"스톤 "+store.Data.stones,15,gold);Text(new Rect(25,115,480,30),"세로형 RTS · 0.5.0",13,muted);
   if(screen=="growth"){GrowthMenu();BottomTabs();return;}
   if(Button(new Rect(25,159,235,44),"휴먼 · 균형",race=="Human"?blue:panel)){ChooseRace("Human");cardScroll=Vector2.zero;}
   if(Button(new Rect(280,159,235,44),"오크 · 정예",race=="Orc"?red:panel)){ChooseRace("Orc");cardScroll=Vector2.zero;}
@@ -32,13 +32,13 @@ public partial class PrototypeGame {
   var ids=catalog.Available(race).ToList();cardScroll=GUI.BeginScrollView(new Rect(20,469,504,368),cardScroll,new Rect(0,0,477,ids.Count*77));
   for(int i=0;i<ids.Count;i++){string id=ids[i];var unit=catalog.Find(id);var card=catalog.Card(id);bool chosen=deck.Contains(id);Rect row=new Rect(0,i*77,474,70);Box(row,chosen?new Color(.13f,.25f,.31f):panel);
    Text(new Rect(12,row.y+8,310,26),catalog.Name(id),17,ink,true);string category=unit!=null?"생산":card.category=="spell"?"마법":"기능";int cost=unit?.cost??card.cost;
-   Text(new Rect(12,row.y+39,325,24),category+" · "+cost+"G · "+(unit!=null?Profile(unit.profile):card.category=="spell"?"즉시 사용 · 합성 불가":"T4 합성 가능"),12,muted);
+   Text(new Rect(12,row.y+39,325,24),category+" · "+cost+"G · "+(unit!=null?Profile(unit.profile):card.category=="spell"?"즉시 사용 · 합성 불가":id=="mine"?"일꾼 고용 · 합성 불가":"T4 합성 가능"),12,muted);
    if(Button(new Rect(375,row.y+16,85,38),chosen?"제외":"추가",chosen?blue:panel,chosen||deck.Count<8)){if(chosen)deck.Remove(id);else deck.Add(id);SaveDeck();}}
   GUI.EndScrollView();Text(new Rect(25,850,490,32),deck.Count==8?"8장 편성 완료 · 메인 탭에서 출전하세요":"정확히 8장을 선택해야 출전할 수 있습니다",14,gold);
  }
  void SaveDeck(){if(race=="Human")store.Data.humanDeck=deck.ToArray();else store.Data.orcDeck=deck.ToArray();store.Write();}
  void CancelPreviewOnly(){gesture.Cancel();if(preview!=null)Destroy(preview);preview=null;previewKey="";previewReason="";}
- void CancelPlacement(){CancelPreviewOnly();selectedCard=-1;}
+ void CancelPlacement(){CancelMergeDrag();CancelPreviewOnly();selectedCard=-1;}
  bool PointerWorld(Vector2 ui,out Vector2 at){at=Vector2.zero;if(sim==null||uiScale<=0||!arena.Contains(ui))return false;
   Vector2 real=new Vector2(uiOffset.x+ui.x*uiScale,Screen.height-uiOffset.y-ui.y*uiScale);Ray ray=cam.ScreenPointToRay(real);var plane=new Plane(Vector3.up,Vector3.zero);if(!plane.Raycast(ray,out float enter))return false;Vector3 point=ray.GetPoint(enter);at=new Vector2(point.x+sim.Width(field)/2f,point.z+sim.Height(field)/2f);return sim.Inside(field,Mathf.FloorToInt(at.x),Mathf.FloorToInt(at.y));
  }
